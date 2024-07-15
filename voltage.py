@@ -6,6 +6,9 @@ class Voltage(PropertyContainer):
         self.add(Property("Value",value))
         self.add(Property("CurrentType",currenttype))
 
+class Ground(Voltage):
+    def __init__(self):
+        super().__init__("GND",0,)
 
 # Example usage
 if __name__ == "__main__":

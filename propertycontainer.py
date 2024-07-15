@@ -1,13 +1,10 @@
 from property import Property
 
 class PropertyContainer(Property):
-    def __init__(self,name: str):
+    def __init__(self,name: str,level = 0):
         self.name = name
         self.value = {}
-        self.setlevel()
-
-    # def setvalue(self,value):
-    #     pass
+        self.level = level
 
     def setlevel(self, level = 0):
         self.level = level

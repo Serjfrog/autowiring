@@ -1,19 +1,26 @@
 class Property:
-    def __init__(self, name: str, value = None):
+    def __init__(self, name: str, value = None, level = 0):
         self.name = name
-        self.level = 0
-        self.setvalue(value)
+        self.__level = level
+        self.value = value
 
-    def setvalue(self,value):
-        self.value = value             
+    @property
+    def level(self):
+        return self.__level
     
-    def setlevel(self,level = 0):
-        self.level = level
+    @level.setter
+    def level(self, level):
+        self.__level = level
+
+    @property
+    def value(self):
+        return self.__value
+    
+    @value.setter
+    def value(self, value):
+        self.__value = value
 
     def __str__(self):
-        return "\t" * self.level + f"{self.name}: " + str(self.value)
-    
-    def display(self,level=0):
         return "\t" * self.level + f"{self.name}: " + str(self.value)
     
 # Example usage
