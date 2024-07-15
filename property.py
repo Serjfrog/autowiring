@@ -30,3 +30,8 @@ if __name__ == "__main__":
     volt = Property("Voltage", 110)
     print(desc)
     print(volt)
+    print("Hello madafaqa")
+    print("Hello madafaqarrrrrrrrrrrr")
+    print("Esto es no es un simulacro autsilio")
+    print("Como es posible este suceso")
+    #Victor Vital Estuvo Aqui
