@@ -1,15 +1,15 @@
 class Property:
     def __init__(self, name: str, value = None, level = 0):
-        self.name = name
+        self.__name = name
         self.__level = level
-        self.value = value
+        self.__value = value
 
     @property
     def level(self):
         return self.__level
     
     @level.setter
-    def level(self, level):
+    def level(self, level: int):
         self.__level = level
 
     @property
@@ -19,6 +19,14 @@ class Property:
     @value.setter
     def value(self, value):
         self.__value = value
+
+    @property
+    def name(self):
+        return self.__name
+    
+    @name.setter
+    def name(self, name: str):
+        self.__name = name
 
     def __str__(self):
         return "\t" * self.level + f"{self.name}: " + str(self.value)
@@ -30,8 +38,3 @@ if __name__ == "__main__":
     volt = Property("Voltage", 110)
     print(desc)
     print(volt)
-    print("Hello madafaqa")
-    print("Hello madafaqarrrrrrrrrrrr")
-    print("Esto es no es un simulacro autsilio")
-    print("Como es posible este suceso")
-    #Victor Vital Estuvo Aqui

@@ -2,17 +2,30 @@ from property import Property
 
 class PropertyContainer(Property):
     def __init__(self,name: str,level = 0):
-        self.name = name
+        self.__name = name
         self.value = {}
-        self.level = level
+        self.__level = level
 
-    def setlevel(self, level = 0):
-        self.level = level
+    @property
+    def level(self):
+        return self.__level
+    
+    @level.setter
+    def level(self, level: int):
+        self.__level = level
         for prop in self.value.values():
-            prop.setlevel(self.level + 1)
+            prop.level = self.level + 1
+
+    @property
+    def name(self):
+        return self.__name
+    
+    @name.setter
+    def name(self, name: str):
+        self.__name = name
 
     def add(self,prop: Property):
-        prop.setlevel(self.level + 1)
+        prop.level = self.level + 1
         self.value[prop.name] = prop
         return self.value[prop.name]
     
